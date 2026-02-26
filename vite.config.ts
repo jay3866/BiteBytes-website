@@ -3,6 +3,8 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { viteSingleFile } from 'vite-plugin-singlefile';
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 // NOTE: API keys must NEVER be injected into the client bundle.
 // Any Gemini / AI calls should be proxied through a backend or serverless function.
 export default defineConfig({
@@ -11,7 +13,7 @@ export default defineConfig({
     port: 3000,
     host: '0.0.0.0',
   },
-  plugins: [react(), viteSingleFile()],
+  plugins: [react(), viteSingleFile(), cloudflare()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '.'),
