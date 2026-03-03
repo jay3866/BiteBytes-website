@@ -45,7 +45,7 @@ export const TermsOfService: React.FC = () => {
               <ul className="mt-3 space-y-2 list-disc pl-6 text-sm">
                 <li>Provide accurate, complete, and current registration information;</li>
                 <li>Maintain the security of your account credentials and not share your password with others;</li>
-                <li>Promptly notify us at <a href="mailto:Reachbitebytes@gmail.com" className="text-brand-primary hover:underline">Reachbitebytes@gmail.com</a> if you suspect unauthorized access to your account; and</li>
+                <li>Promptly notify us at <a href="mailto:hello@bitebytes.co" className="text-brand-primary hover:underline">hello@bitebytes.co</a> if you suspect unauthorized access to your account; and</li>
                 <li>Take responsibility for all activity that occurs under your account.</li>
               </ul>
               <p className="mt-3">We reserve the right to suspend or terminate accounts that provide false information or violate these Terms.</p>
@@ -107,7 +107,37 @@ export const TermsOfService: React.FC = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Acceptable Use</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Subscription Plans and Payment</h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">5.1 Free Plan</h3>
+                  <p>BiteBytes offers a free tier with core features, including up to 5 recipes, 10 ingredients, vendor management, and manual cost entry. Access to features available under your current plan will not be reduced if you continue using the plan you originally subscribed to.</p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">5.2 Paid Subscriptions — In-App Purchase (iOS)</h3>
+                  <p>BiteBytes Pro is available at the following rates:</p>
+                  <ul className="mt-3 space-y-2 list-disc pl-6 text-sm">
+                    <li><strong>Monthly:</strong> $14.99 per month</li>
+                    <li><strong>Annual:</strong> $139.99 per year (save over 22% compared to monthly billing)</li>
+                  </ul>
+                  <p className="mt-3">Pro includes unlimited AI assistant access, camera invoice scanning, sub-recipe builder, and inventory tracking.</p>
+                  <p className="mt-3">If you subscribe through the Apple App Store, your purchase is processed by Apple using the In-App Purchase API. By subscribing through the App Store, you agree that:</p>
+                  <ul className="mt-3 space-y-2 list-disc pl-6 text-sm">
+                    <li>All billing, payment processing, and subscription management are handled by Apple through your Apple Account;</li>
+                    <li>Subscription fees are charged to your Apple Account upon confirmation of purchase;</li>
+                    <li>Subscriptions automatically renew unless auto-renewal is turned off at least 24 hours before the end of the current billing period;</li>
+                    <li>Your Apple Account will be charged for renewal within 24 hours prior to the end of the current billing period;</li>
+                    <li>You can manage and cancel subscriptions through your Apple Account Settings after purchase;</li>
+                    <li>No cancellation of the current active subscription period is allowed; and</li>
+                    <li>Any unused portion of a free trial, if offered, will be forfeited when you purchase a subscription.</li>
+                  </ul>
+                  <p className="mt-3 text-sm bg-slate-50 p-3 rounded-xl border border-slate-100">To cancel an App Store subscription: Open the <strong>Settings app</strong> → <strong>[Your Name]</strong> → <strong>Subscriptions</strong> → <strong>BiteBytes</strong> → <strong>Cancel Subscription</strong>.</p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">6. Acceptable Use</h2>
               <p>You agree to use BiteBytes only for lawful purposes. You agree not to:</p>
               <ul className="mt-3 space-y-2 list-disc pl-6 text-sm">
                 <li>Use the Service for any unlawful, fraudulent, or harmful purpose;</li>
@@ -147,7 +177,7 @@ export const TermsOfService: React.FC = () => {
             <section>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">8. Maintenance and Support</h2>
               <p>BiteBytes, Inc. — not Apple — is solely responsible for providing maintenance and support services for the Licensed Application. Apple has no obligation whatsoever to furnish any maintenance or support services with respect to the Licensed Application.</p>
-              <p className="mt-3">For support, contact us at: <a href="mailto:Reachbitebytes@gmail.com" className="text-brand-primary hover:underline">Reachbitebytes@gmail.com</a></p>
+              <p className="mt-3">For support, contact us at: <a href="mailto:hello@bitebytes.co" className="text-brand-primary hover:underline">hello@bitebytes.co</a></p>
             </section>
 
             <section>
@@ -202,7 +232,7 @@ export const TermsOfService: React.FC = () => {
               <div className="space-y-4">
                 <div>
                   <h3 className="text-lg font-bold text-slate-800 mb-2">15.1 By You</h3>
-                  <p>You may close your account at any time by contacting <a href="mailto:Reachbitebytes@gmail.com" className="text-brand-primary hover:underline">Reachbitebytes@gmail.com</a> or through your account settings. For App Store subscriptions, cancel through your Apple Account Settings. Termination does not entitle you to a refund of prepaid fees.</p>
+                  <p>You may close your account at any time by contacting <a href="mailto:hello@bitebytes.co" className="text-brand-primary hover:underline">hello@bitebytes.co</a> or through your account settings. For App Store subscriptions, cancel through your Apple Account Settings. Termination does not entitle you to a refund of prepaid fees.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-800 mb-2">15.2 By BiteBytes</h3>
@@ -224,7 +254,7 @@ export const TermsOfService: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-800 mb-2">16.2 Informal Resolution</h3>
-                  <p>Before initiating any legal proceeding, you agree to contact us at <a href="mailto:Reachbitebytes@gmail.com" className="text-brand-primary hover:underline">Reachbitebytes@gmail.com</a> and attempt to resolve the dispute informally for at least 30 days.</p>
+                  <p>Before initiating any legal proceeding, you agree to contact us at <a href="mailto:hello@bitebytes.co" className="text-brand-primary hover:underline">hello@bitebytes.co</a> and attempt to resolve the dispute informally for at least 30 days.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-800 mb-2">16.3 Binding Arbitration</h3>
@@ -270,7 +300,7 @@ export const TermsOfService: React.FC = () => {
                   <p>Direct all questions, complaints, or claims regarding the Licensed Application to:</p>
                   <div className="mt-2 bg-slate-50 p-4 rounded-xl border border-slate-100 text-sm">
                     <p className="font-semibold text-slate-800">BiteBytes, Inc.</p>
-                    <p>Email: <a href="mailto:Reachbitebytes@gmail.com" className="text-brand-primary hover:underline">Reachbitebytes@gmail.com</a></p>
+                    <p>Email: <a href="mailto:hello@bitebytes.co" className="text-brand-primary hover:underline">hello@bitebytes.co</a></p>
                   </div>
                 </div>
                 <div>
@@ -326,7 +356,7 @@ export const TermsOfService: React.FC = () => {
               <h2 className="text-2xl font-bold text-slate-900 mb-4">19. Contact Us</h2>
               <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
                 <p className="font-semibold text-slate-800 mb-3">BiteBytes, Inc.</p>
-                <p className="text-sm">General & Legal Inquiries: <a href="mailto:Reachbitebytes@gmail.com" className="text-brand-primary hover:underline">Reachbitebytes@gmail.com</a></p>
+                <p className="text-sm">General & Legal Inquiries: <a href="mailto:hello@bitebytes.co" className="text-brand-primary hover:underline">hello@bitebytes.co</a></p>
               </div>
             </section>
 
