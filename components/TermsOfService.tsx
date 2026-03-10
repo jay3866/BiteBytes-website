@@ -118,7 +118,7 @@ export const TermsOfService: React.FC = () => {
                   <p>BiteBytes Pro is available at the following rates:</p>
                   <ul className="mt-3 space-y-2 list-disc pl-6 text-sm">
                     <li><strong>Monthly:</strong> $14.99 per month</li>
-                    <li><strong>Annual:</strong> $149.99 per year (save over 16% compared to monthly billing)</li>
+                    <li><strong>Annual:</strong> $139.99 per year (save over 22% compared to monthly billing)</li>
                   </ul>
                   <p className="mt-3">Pro includes unlimited recipes and ingredients, AI Voice Kitchen Assistant, AI Camera Ingredient Recognition, Invoice OCR Scanning, Menu Builder, Sub-Recipe Management, Usage Analysis, Vendor Price Comparison, and Inventory Count Tracking.</p>
                   <p className="mt-3">If you subscribe through the Apple App Store, your purchase is processed by Apple using the In-App Purchase API. By subscribing through the App Store, you agree that:</p>
