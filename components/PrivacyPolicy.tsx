@@ -16,8 +16,8 @@ export const PrivacyPolicy: React.FC = () => {
               BiteBytes Privacy Policy
             </h1>
             <div className="flex flex-wrap gap-4 text-sm font-medium">
-              <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Effective Date: October 2025</span>
-              <span className="bg-brand-primary/10 text-brand-primary px-3 py-1 rounded-full">Version 1.1</span>
+              <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Effective Date: March 10, 2026</span>
+              <span className="bg-brand-primary/10 text-brand-primary px-3 py-1 rounded-full">Version 2.0</span>
             </div>
           </div>
 
@@ -63,7 +63,8 @@ export const PrivacyPolicy: React.FC = () => {
                     </div>
                     <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
                       <p className="font-semibold text-slate-800 mb-1">User Content</p>
-                      <p className="text-sm">Photos and Videos — food photos captured or selected when using the AI Camera feature, transmitted to OpenAI for ingredient recognition. <span className="text-brand-primary font-medium">(App Functionality)</span></p>
+                      <p className="text-sm">Photos and Videos — food photos captured or selected when using the AI Camera feature, transmitted to OpenAI for ingredient recognition; invoice photos transmitted to Google Cloud Vision for OCR scanning. <span className="text-brand-primary font-medium">(App Functionality)</span></p>
+                      <p className="text-sm mt-2">Audio Data — voice audio streamed in real time to Google Gemini when using the AI Voice Kitchen Assistant. Audio is processed for speech-to-speech interaction and is not stored by BiteBytes. <span className="text-brand-primary font-medium">(App Functionality)</span></p>
                       <p className="text-sm mt-2">Other User Content — recipes, ingredients, vendor pricing, inventory records, method steps, notes, and tags you create in the app. <span className="text-brand-primary font-medium">(App Functionality)</span></p>
                     </div>
                     <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
@@ -100,7 +101,7 @@ export const PrivacyPolicy: React.FC = () => {
                   <p className="text-sm text-green-700">
                     BiteBytes does not collect: precise or coarse location, contacts, browsing history, health or
                     fitness data, sensitive personal information (racial/ethnic origin, biometric data, etc.),
-                    advertising identifiers (IDFA), audio data, or device IDs used for tracking.
+                    advertising identifiers (IDFA), or device IDs used for tracking.
                   </p>
                 </div>
 
@@ -123,7 +124,8 @@ export const PrivacyPolicy: React.FC = () => {
                   { title: 'Account (Email Address)', body: 'Required to create your account, authenticate you, sync your data across devices, and contact you if you request support. Legal basis: contract performance.' },
                   { title: 'Apple Sign-In Identifier', body: 'If you choose Sign in with Apple, we receive an anonymized identifier from Apple rather than your email. This is linked to your account.' },
                   { title: 'User Content (Recipes, Ingredients, Inventory, Vendors)', body: 'The core data you create in the app. Stored locally on your device and synced to your private cloud database. Used solely to provide app functionality.' },
-                  { title: 'Photos (AI Camera Feature Only)', body: "Captured or selected by you when using the AI Camera. Compressed on your device, transmitted to OpenAI's Vision API for ingredient recognition, and then discarded. Not stored on BiteBytes's servers." },
+                  { title: 'Photos (AI Camera & Invoice Scan)', body: "Captured or selected by you when using the AI Camera for ingredient recognition (sent to OpenAI) or Invoice Scan (sent to Google Cloud Vision). Images are compressed on your device, transmitted for processing, and then discarded. Not stored on BiteBytes's servers." },
+                  { title: 'Audio (AI Voice Assistant)', body: "Voice audio is streamed in real time via WebSocket to Google Gemini when you use the Voice Kitchen Assistant. Audio is processed for speech-to-speech interaction and is not recorded or stored by BiteBytes." },
                   { title: 'Financial Data (Costs)', body: 'Ingredient costs, vendor prices, and sell prices you enter manually. Used only to power the recipe costing engine on your device and in your account. Never shared with any third party.' },
                   { title: 'Anonymized Usage & Crash Data', body: 'Aggregated, non-identifiable data about how the app is used and when it crashes. Used to improve app stability and features. Cannot be traced back to any individual user.' },
                   { title: 'Sync Timestamps', body: 'The date and time of your last data sync, stored to enable conflict resolution when you use multiple devices. Not shared.' },
@@ -162,14 +164,34 @@ export const PrivacyPolicy: React.FC = () => {
               <div className="space-y-5">
                 {[
                   {
-                    name: 'Supabase',
-                    url: 'supabase.com',
+                    name: 'Convex',
+                    url: 'convex.dev',
                     role: 'Backend database, authentication, and cloud storage.',
-                    data: 'Email address, User ID, and all user-generated content (recipes, ingredients, inventory, vendor data, AI recognition logs).',
-                    purpose: 'App Functionality — storing and syncing your data securely across devices.',
+                    data: 'User ID and all user-generated content (recipes, ingredients, inventory, vendor data, usage tracking).',
+                    purpose: 'App Functionality — storing and syncing your data securely.',
                     linked: true,
-                    privacy: 'supabase.com/privacy',
+                    privacy: 'convex.dev/privacy',
                     note: null,
+                  },
+                  {
+                    name: 'Google Gemini',
+                    url: 'ai.google.dev',
+                    role: 'AI Voice Kitchen Assistant (speech-to-speech).',
+                    data: 'Voice audio streamed in real time when you use the Voice Assistant.',
+                    purpose: 'App Functionality — hands-free voice interaction for recipe, inventory, and cost queries.',
+                    linked: false,
+                    privacy: 'policies.google.com/privacy',
+                    note: "Audio is streamed via WebSocket and processed in real time. BiteBytes does not store voice recordings. Google's own data policies govern their handling of API requests.",
+                  },
+                  {
+                    name: 'Google Cloud Vision',
+                    url: 'cloud.google.com',
+                    role: 'Invoice OCR scanning.',
+                    data: 'Invoice photos, transmitted only when you actively use the Invoice Scan feature.',
+                    purpose: 'App Functionality — extracting line items and pricing from supplier invoices.',
+                    linked: false,
+                    privacy: 'policies.google.com/privacy',
+                    note: "Photos are processed in real time and not stored by BiteBytes.",
                   },
                   {
                     name: 'OpenAI',
@@ -182,21 +204,21 @@ export const PrivacyPolicy: React.FC = () => {
                     note: "Photos are processed in real time and not stored by BiteBytes. OpenAI's own data policies govern their handling of API requests.",
                   },
                   {
-                    name: 'Apple CloudKit / iCloud',
-                    url: 'apple.com',
-                    role: 'Optional supplemental device sync.',
-                    data: 'User content synced across your devices under your Apple ID.',
-                    purpose: 'App Functionality.',
-                    linked: true,
-                    privacy: 'apple.com/legal/privacy',
-                    note: null,
+                    name: 'Superwall',
+                    url: 'superwall.com',
+                    role: 'Paywall presentation and subscription flow.',
+                    data: 'Anonymized event data (paywall views, conversion events). No personal data is shared.',
+                    purpose: 'App Functionality — displaying subscription options.',
+                    linked: false,
+                    privacy: 'superwall.com/privacy',
+                    note: 'Superwall does not receive or process any user content, voice data, or photos.',
                   },
                   {
                     name: 'Apple StoreKit 2',
                     url: 'apple.com',
-                    role: 'Account verification.',
-                    data: 'Account status, verification tokens.',
-                    purpose: 'App Functionality — verifying your account.',
+                    role: 'In-App Purchase and subscription management.',
+                    data: 'Subscription status, purchase verification tokens.',
+                    purpose: 'App Functionality — processing subscriptions and verifying entitlements.',
                     linked: true,
                     privacy: 'apple.com/legal/privacy',
                     note: 'BiteBytes never receives or stores your payment card information. All payment processing is handled entirely by Apple.',
@@ -223,19 +245,27 @@ export const PrivacyPolicy: React.FC = () => {
 
             {/* Section 6 */}
             <section>
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">6. Camera & AI Ingredient Recognition</h2>
-              <p className="mb-4">The AI Camera is a feature that requires camera and/or photo library access. Here's exactly how it works:</p>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">6. AI Features & Data Processing</h2>
+
+              <p className="font-semibold text-slate-800 mt-4 mb-2">AI Camera Ingredient Recognition</p>
+              <p className="mb-4">The AI Camera requires camera and/or photo library access. Here's how it works:</p>
               <ol className="list-decimal pl-6 space-y-2 text-sm">
                 <li>You photograph your ingredients in the app</li>
                 <li>The image is compressed on your device and sent over an encrypted (TLS) connection to OpenAI's Vision API</li>
                 <li>OpenAI returns a structured list of recognized ingredients (names, estimated quantities, categories, and confidence scores)</li>
                 <li>You review the results and choose which items to accept, edit, or discard</li>
-                <li>Accepted items are added to your inventory or recipe. A recognition log entry is saved to your account for your reference.</li>
+                <li>Accepted items are added to your inventory or recipe</li>
               </ol>
+
+              <p className="font-semibold text-slate-800 mt-6 mb-2">Invoice OCR Scanning</p>
+              <p className="text-sm">Invoice photos are sent to Google Cloud Vision for text extraction. Parsed line items (product names, quantities, prices) are presented for your review before being saved. Photos are not stored on BiteBytes servers.</p>
+
+              <p className="font-semibold text-slate-800 mt-6 mb-2">AI Voice Kitchen Assistant</p>
+              <p className="text-sm">Voice audio is streamed in real time via WebSocket to Google Gemini for speech-to-speech interaction. The assistant can look up your recipes, inventory, and costs hands-free. BiteBytes does not record or store voice audio. Microphone permission can be revoked at any time in <strong>iOS Settings → Privacy & Security</strong>.</p>
+
               <p className="mt-4 text-sm">
-                Photos are never stored on BiteBytes's servers. Camera and photo library permissions are used only
-                for this feature and can be revoked at any time in <strong>iOS Settings → Privacy & Security</strong> without
-                affecting any other app functionality.
+                Photos are never stored on BiteBytes's servers. Camera, photo library, and microphone permissions can be revoked at any time in <strong>iOS Settings → Privacy & Security</strong> without
+                affecting other app functionality.
               </p>
             </section>
 
@@ -245,8 +275,8 @@ export const PrivacyPolicy: React.FC = () => {
               <p className="mb-6">BiteBytes offers two tiers:</p>
               <div className="space-y-4">
                 {[
-                  { tier: 'Free', desc: 'Up to 10 recipes, 25 ingredients, 15 inventory items. Manual entry only.' },
-                  { tier: 'Pro ($14.99/month or $139.99/year)', desc: 'Unlimited recipes and ingredients, AI scanning (20 scans/month), advanced analytics, export, widgets, Siri Shortcuts. Includes 7-day free trial.' },
+                  { tier: 'Free', desc: 'Up to 5 recipes, 10 ingredients. Manual entry only. No AI features.' },
+                  { tier: 'Pro ($14.99/month or $139.99/year)', desc: 'Unlimited recipes and ingredients, AI Voice Kitchen Assistant (30 sessions/month), AI Camera Ingredient Recognition (100/month), Invoice OCR Scanning (50/month), Menu Builder, Sub-Recipe Management, Usage Analysis, Vendor Price Comparison, and Inventory Count Tracking.' },
                 ].map((t) => (
                   <div key={t.tier} className="p-4 bg-slate-50 rounded-xl border border-slate-100">
                     <p className="font-semibold text-slate-800 mb-1">{t.tier}</p>
@@ -266,12 +296,10 @@ export const PrivacyPolicy: React.FC = () => {
             <section>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">8. Data Sync & Local Storage</h2>
               <p>
-                BiteBytes is offline-first. All data is saved locally on your device using Core Data before any
-                network sync occurs, ensuring full functionality without an internet connection. When online, the
-                app syncs changes to your private Supabase database. Sync uses last-write-wins conflict resolution
-                based on timestamps. Data in transit is encrypted using TLS 1.2 or higher. Data at rest in Supabase
-                is encrypted. Supabase Row Level Security (RLS) policies ensure your data is accessible only by
-                your authenticated account.
+                Your data is stored on Convex cloud servers and accessed via authenticated HTTP requests.
+                Data in transit is encrypted using TLS 1.2 or higher. Data at rest in Convex
+                is encrypted. User authentication via Apple Sign In ensures your data is accessible only by
+                your authenticated account. API keys for AI services are stored locally on your device in UserDefaults.
               </p>
             </section>
 
@@ -335,12 +363,11 @@ export const PrivacyPolicy: React.FC = () => {
               <p className="mb-4">We apply the following security measures:</p>
               <ul className="list-disc pl-6 space-y-2 text-sm">
                 <li>TLS 1.2+ encryption for all data transmitted between the app and our servers</li>
-                <li>Encryption at rest for all data stored in Supabase</li>
-                <li>iOS Keychain storage for session tokens, API keys, and credentials</li>
-                <li>Row Level Security in Supabase ensuring strict per-user data isolation at the database level</li>
-                <li>Hashed passwords — plaintext passwords are never stored</li>
-                <li>Apple Sign-In via OAuth 2.0</li>
-                <li>Session tokens are automatically refreshed and stored securely</li>
+                <li>Encryption at rest for all data stored in Convex</li>
+                <li>API keys stored locally on your device</li>
+                <li>Per-user data isolation — all database queries are scoped to your authenticated user ID</li>
+                <li>Apple Sign In for authentication — no passwords stored</li>
+                <li>User session persisted securely on device and auto-restored on launch</li>
               </ul>
               <p className="mt-4 text-sm text-slate-500">
                 No security system is infallible. If you suspect your account has been compromised, contact{' '}
@@ -375,7 +402,7 @@ export const PrivacyPolicy: React.FC = () => {
 
             {/* Footer note */}
             <div className="border-t border-slate-100 pt-8 text-center text-sm text-slate-400">
-              © 2025 BiteBytes. All rights reserved.
+              © 2026 BiteBytes. All rights reserved.
             </div>
           </div>
         </motion.div>
